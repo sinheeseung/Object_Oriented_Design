@@ -1,0 +1,22 @@
+/*!
+ *     Copyright:  Copyright (c) 2021, HeeSeung.me
+ */
+#include "Node.h"
+#include <string>
+Node::Node(int value, Node* left, Node* right): value_(value), left_(left), right_(right) {}
+
+const int value() {
+        return value_;
+}
+
+const Node* left() {
+	return left_;
+}
+
+const Node* right() {
+	return right_;
+}
+
+const std::string ToString() {
+	return "a";
+}
