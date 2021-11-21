@@ -1,0 +1,40 @@
+/*!
+ *     Copyright:  Copyright (c) 2021, HeeSeung.me
+ */
+#include "TreeUtil.h"
+#include "IntNode.h"
+#include "StringNode.h"
+#include <string>
+#include <iostream>
+#include <typeinfo>
+
+TreeUtil* TreeUtil::instance_ = NULL;
+TreeUtil::TreeUtil() {}
+TreeUtil* TreeUtil::GetInstance() {
+        if (instance_ == NULL) {
+                instance_ = new TreeUtil();
+        }
+        return instance_;
+}
+
+const std::string TreeUtil::ToString(const Node* node) const {
+	std::string result;
+        if(static_cast<const IntNode*>(node) != nullptr){
+		result = "IntNode(" + std::to_string(static_cast<const IntNode*>(node)->value());
+	}
+	if(static_cast<const StringNode*>(node) != nullptr)
+		result = "StringNode(" + static_cast<const StringNode*>(node)->value();
+	if(node->left() == NULL) {
+		result += "NULL";
+	} else {
+		result += TreeUtil::ToString(node->left());
+	}
+
+	if(node->right() == NULL) {
+		result += "NULL";
+	} else {
+		result += TreeUtil::ToString(node->right());
+	}
+	return result+")";
+}
+
