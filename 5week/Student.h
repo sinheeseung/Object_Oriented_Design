@@ -1,5 +1,5 @@
 /*!
- *     Copyright:  Copyright (c) 2021, HeeSeung.me
+ *     Copyright:  Copyright (c)  2021, HeeSeung.me
  */
 
 #ifndef DESKTOP_OBJECT_ORIENTED_DESIGN_5WEEK_STUDENT_H_
